@@ -1,30 +1,23 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# Configurando tabela completa
-pd.set_option("display.max_columns", None)  # Mostra todas as colunas
-pd.set_option("display.max_rows", None)  # Mostra todas as linhas
-pd.set_option("display.width", 1000)  # Ajusta a largura da exibição
+# tabela completa
+pd.set_option("display.max_columns", None)  # colunas
+pd.set_option("display.max_rows", None)  # linhas
+pd.set_option("display.width", 1000)  # exibição
 
-# Dados fornecidos
-data = {
-    'ID': [0, 2, 12, 13, 14, 0, 18, 3, 0, 9, 4, 11, 0, 1, 10, 5, 6, 0, 8, 0, 6, 0, 0, 15, 16, 17, 0, 6],
-    'quantidade projeto': [0, 2, 12, 13, 14, 0, 18, 3, 0, 9, 4, 11, 0, 1, 10, 5, 6, 0, 8, 0, 6, 0, 0, 15, 16, 17, 0, 6],
-    'Nome do projeto': ['Solatio', 'Fortescue', 'Enegix', 'EDP', 'Qair', 'Casa dos Ventos', 'Enterprize Energy', 'Qair', 'White Martins', 'Unigel', 'Porto Central', 'Fortescue', 'Porto Norte Fluminense', 'UFRJ', 'Angra 1 e 2', 'Porto de Santos', 'UNIFEI', 'Shell/Raízen/Hytron/Toyota', 'Yara/Raízen', 'Atlas Agro', 'PTI', 'Copel', 'HUB Begreen - Tio Hugo', 'HUB Begreen - Usina Escola', 'Enerfim', 'White Martins', 'Neoenergia', 'Norte Energia'],
-    'Local': ['Parnaíba-PI', 'Porto de Pecém-CE', 'Porto de Pecém-CE', 'Porto de Pecém-CE', 'Porto de Pecém-CE', 'Porto de Pecém-CE', 'Touros-CE', 'Suape-PE', 'Porto de Suape', 'Camaçari-BA', 'Espírito Santos', 'Porto do Açu-RJ', 'UNLOCK', 'Rio de Janeiro', 'Angra-RJ', 'São Paulo', 'Itajubá-MG', 'USP-SP', 'Cubatão-SP', 'Uberaba-MG', 'Itumbiara-GO', 'Curitibas- PR', 'Distrito Industrial', 'Passo Fundo', 'Porto do Rio Grande', 'Porto do Rio Grande', 'Porto do Rio Grande', 'Belo Monte- PA'],
-    'Finalidade': ['H2V', 'H2V', 'H2V', 'H2V', 'H2V', 'H2V e NH3', 'H2V', 'H2V', 'H2V', 'NH3V', 'H2V', 'H2V', 'H2V', 'Onibus', 'Purificação de H2', 'H2V', 'H2V', 'Onibus', 'Reforma a vapor BioCH4 e NH3V', 'NH3V', 'H2V', 'Transporte', 'NH3V', 'NH3V', 'NH3V', 'H2V', 'H2V', 'NH3V'],
-    'Capacidade(T/ano)': [500000.00, 305505.00, 600000.00, 2000.00, 488000.00, 365000.00, 0, 488000.00, 0, 600000.00, 0, 250000.00, 0, 0, 300, 0, 46.5, 390, 240, 500000.00, 10, 0, 4000.00, 2000.00, 0, 0, 0, 120000.00],
-    'Valor(R$ milhões)': [50000.00, 6000.00, 5400.00, 42, 6900.00, 4000.00, 0, 3900.00, 0, 1500.00, 0, 0, 0, 0, 0, 0, 0, 50, 0, 43000.00, 45, 12, 65, 45, 0, 0, 0, 1034.00]
-}
+# Carregar os dados
+df = pd.read_csv("projeto_cluster.csv")
 
-# Criando o DataFrame
-df = pd.DataFrame(data)
+# Calcular o total de poluentes
+df['Total_poluentes'] = df['PM10'] + df['PM2,5'] + df['O3'] + df['NO2'] + df['SO2'] + df['CO']
 
-# Selecionando as colunas relevantes para o clustering
-colunas_cluster = ['Capacidade(T/ano)', 'Valor(R$ milhões)']
+# Selecionando as colunas relevantes
+colunas_cluster = ['PM10', 'PM2,5', 'O3', 'NO2', 'SO2', 'CO', 'IQAR', 'Total_poluentes']
 X = df[colunas_cluster]
 
 # Normalizar os dados
@@ -45,12 +38,12 @@ df.to_csv("cluster_resultado_kmeans.csv", index=False)
 print("\nTabela completa com clusters:")
 print(df)
 
-# Plotando os clusters (Capacidade vs Valor) em 2D
+# Plotando os clusters (IQAR vs Total de Poluentes) em 2D
 plt.figure(figsize=(10, 6))
-sns.scatterplot(data=df, x='Capacidade(T/ano)', y='Valor(R$ milhões)', hue='Cluster', palette='viridis')
-plt.xlabel("Capacidade (T/ano)")
-plt.ylabel("Valor (R$ milhões)")
-plt.title("Clusters Identificados pelo KMeans (Capacidade vs Valor)")
+sns.scatterplot(data=df, x='Total_poluentes', y='IQAR', hue='Cluster', palette='viridis')
+plt.xlabel("Total de Poluentes")
+plt.ylabel("Índice de Qualidade do Ar (IQAR)")
+plt.title("Clusters Identificados pelo KMeans (IQAR vs Total de Poluentes)")
 plt.legend(title="Cluster")
 plt.show()
 
