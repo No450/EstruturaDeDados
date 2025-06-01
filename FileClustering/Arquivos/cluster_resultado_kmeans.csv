@@ -1,30 +1,30 @@
-ID,quantidade projeto,Nome do projeto,Local,Finalidade,Capacidade(T/ano),Valor(R$ milhões),Cluster
-0,0,Solatio,Parnaíba-PI,H2V,500000.0,50000.0,2
-2,2,Fortescue,Porto de Pecém-CE,H2V,305505.0,6000.0,1
-12,12,Enegix,Porto de Pecém-CE,H2V,600000.0,5400.0,1
-13,13,EDP,Porto de Pecém-CE,H2V,2000.0,42.0,0
-14,14,Qair,Porto de Pecém-CE,H2V,488000.0,6900.0,1
-0,0,Casa dos Ventos,Porto de Pecém-CE,H2V e NH3,365000.0,4000.0,1
-18,18,Enterprize Energy,Touros-CE,H2V,0.0,0.0,0
-3,3,Qair,Suape-PE,H2V,488000.0,3900.0,1
-0,0,White Martins,Porto de Suape,H2V,0.0,0.0,0
-9,9,Unigel,Camaçari-BA,NH3V,600000.0,1500.0,1
-4,4,Porto Central,Espírito Santos,H2V,0.0,0.0,0
-11,11,Fortescue,Porto do Açu-RJ,H2V,250000.0,0.0,1
-0,0,Porto Norte Fluminense,UNLOCK,H2V,0.0,0.0,0
-1,1,UFRJ,Rio de Janeiro,Onibus,0.0,0.0,0
-10,10,Angra 1 e 2,Angra-RJ,Purificação de H2,300.0,0.0,0
-5,5,Porto de Santos,São Paulo,H2V,0.0,0.0,0
-6,6,UNIFEI,Itajubá-MG,H2V,46.5,0.0,0
-0,0,Shell/Raízen/Hytron/Toyota,USP-SP,Onibus,390.0,50.0,0
-8,8,Yara/Raízen,Cubatão-SP,Reforma a vapor BioCH4 e NH3V,240.0,0.0,0
-0,0,Atlas Agro,Uberaba-MG,NH3V,500000.0,43000.0,2
-6,6,PTI,Itumbiara-GO,H2V,10.0,45.0,0
-0,0,Copel,Curitibas- PR,Transporte,0.0,12.0,0
-0,0,HUB Begreen - Tio Hugo,Distrito Industrial,NH3V,4000.0,65.0,0
-15,15,HUB Begreen - Usina Escola,Passo Fundo,NH3V,2000.0,45.0,0
-16,16,Enerfim,Porto do Rio Grande,NH3V,0.0,0.0,0
-17,17,White Martins,Porto do Rio Grande,H2V,0.0,0.0,0
-0,0,Neoenergia,Porto do Rio Grande,H2V,0.0,0.0,0
-6,6,Norte Energia,Belo Monte- PA,NH3V,120000.0,1034.0,0
+Estação,Cidade,PM10,"PM2,5",O3,NO2,SO2,CO,IQAR,Total_poluentes,Cluster
+Capinzal do Norte,Capínzal do Norte,33,0,72,0,26,0,72,131,2
+Escola Municipal Ybacanga,São Luis,18,15,0,0,0,0,18,33,3
+Posto de saúde do Bacanga,São Luis,64,21,0,0,0,0,64,85,4
+Gapara,São Luis,24,0,7,1,12,2,24,46,1
+Estação AERCA Açailândia,Açailandia,27,19,0,0,0,0,27,46,5
+UTE Interna,São Luis,20,0,12,1,8,1,20,42,1
+Santo Antonio dos Lopes,Santo Antonio do Lopes,33,0,72,0,26,0,72,131,2
+AREIAS II,Camaçari,0,0,0,0,7,0,7,7,0
+AREIAS I,Camaçari,0,0,0,0,0,0,0,0,0
+Machadinho,Camaçari,0,15,13,3,5,1,15,37,8
+Caboto,Candeias,23,0,18,4,21,1,23,67,6
+Botelho,Salvador,0,0,13,3,2,1,13,19,0
+Câmara,Dias d'Ávila,0,0,12,3,2,0,12,17,0
+Cobre,Dias d'Ávila,0,0,0,0,2,0,2,2,0
+Leandrinho,Dias d'Ávila,12,10,0,2,2,0,12,26,3
+Gravatá,Camaçari,10,0,0,3,0,0,10,13,0
+Lamarao ,São sebastião do Passe,0,0,12,2,4,0,12,18,0
+Futurama I,Dias d'Ávila,0,0,0,0,1,0,1,1,0
+Malemba,Camaçari,7,10,13,1,85,0,85,116,7
+Gamboa,Candeias,5,0,13,1,0,0,13,19,0
+Concordia ,Dias d'Ávila,7,0,0,1,0,0,7,8,0
+Escola,Dias d'Ávila,0,0,11,2,2,0,11,15,0
+EDCUPE,Ipojuca,0,0,10,1,3,2,10,16,0
+IFPE,Ipojuca,0,0,5,0,8,0,5,13,0
+CPRH,Cabo de Santo Agostinho,34,0,0,1,4,2,34,41,1
+Ipojuca,Ipojuca,27,0,7,3,3,2,27,42,1
+PORTO ALEGRE/CETE,Portalegre,0,11,5,4,12,7,12,39,9
+
 
